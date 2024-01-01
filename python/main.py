@@ -1,7 +1,7 @@
-from strings_hash import charcount_counter
+from strings_hash import firstnonrepeat
 
 def main():
-    print(charcount_counter(34, "b"))
+    print(firstnonrepeat("aabbcc"))
     return
 if __name__ == "__main__":
     main()

@@ -1,7 +1,6 @@
 from collections import Counter
 """
 given a string s, return how many times a character c appears, -1 if it does not appear
-- def charcount(word, character)
 """
 def charcount(word, character):
     amount = word.count(character)
@@ -12,3 +11,14 @@ def charcount_counter(word, character):
     charfreq = Counter(word)
     amount = charfreq.get(character)
     return amount if amount != 0 else -1
+"""
+given a string s, find the first non repeating character
+"""
+def firstnonrepeat(word):
+    if not isinstance(word, str):
+        raise TypeError("Must be string !!")
+    charfreq = Counter(word)
+    for c in word:
+        if charfreq.get(c) == 1:
+            return c
+    return None

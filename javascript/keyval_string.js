@@ -1,7 +1,6 @@
 
 /**
  * given a string s, return how many times a character c appears, -1 if it does not appear
-- charcount(word, character)
  */
 const freqmap = word => {
     const obj = {};
@@ -21,4 +20,8 @@ function charcount(word, character) {
         return myobj[character];
     }
 }
+
+/**
+ * 
+ */
 console.log(charcount("babatunde", "k"))
