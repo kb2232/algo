@@ -22,6 +22,15 @@ function charcount(word, character) {
 }
 
 /**
- * 
+ * given a string s, find the first non repeating character
  */
-console.log(charcount("babatunde", "k"))
+function firstnonrepeat(word) {
+    const myobj = freqmap(word);
+    for(let c of word) {
+        if(myobj[c] == 1) {
+            return c;
+        }
+    }
+    return "None";
+}
+console.log(firstnonrepeat("aabbcc"))
