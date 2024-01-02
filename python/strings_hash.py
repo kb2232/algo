@@ -22,3 +22,12 @@ def firstnonrepeat(word):
         if charfreq.get(c) == 1:
             return c
     return None
+"""
+given a string, s, find the character c or characters, that repeats the most
+- repeatsmost(word)
+"""
+def repeatsmost(word):
+    freq = Counter(word)
+    allvalues = freq.values()
+    maxval = max(allvalues)
+    return [char for char,val in freq.items() if val == maxval]

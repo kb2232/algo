@@ -33,4 +33,22 @@ function firstnonrepeat(word) {
     }
     return "None";
 }
-console.log(firstnonrepeat("aabbcc"))
+/**
+ * given a string, s, find the character c or characters, that repeats the most
+- repeatsmost(word)
+ */
+const repeatsmost = word => {
+    if(typeof word !== "string"){
+        throw new TypeError("must be string!!1")
+    }
+    if(word.length == 1) return [word];
+    const myobj = freqmap(word);
+    const allvalues = Object.values(myobj);
+    const maxval = Math.max(...allvalues);
+    const myset = new Set()
+    for(let c of word) {
+        if(myobj[c] === maxval) myset.add(c)
+    }
+    return myset;
+}
+console.log(repeatsmost("babatunde"))

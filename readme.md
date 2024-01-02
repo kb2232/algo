@@ -14,3 +14,11 @@ given a string s, find the first non repeating character
     - check each character in obj
     - return as soon as the value of the key is ONE
 ```
+## question 3
+```
+given a string, s, find the character c or characters, that repeats the most
+- repeatsmost(word)
+1. create a freq map of word
+2. from all the values, find max
+3. loop over word, return a list of one or all the characters with value of max
+```

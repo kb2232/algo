@@ -1,7 +1,7 @@
-from strings_hash import firstnonrepeat
+from strings_hash import repeatsmost
 
 def main():
-    print(firstnonrepeat("aabbcc"))
+    print(repeatsmost("abc"))
     return
 if __name__ == "__main__":
     main()
