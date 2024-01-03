@@ -70,5 +70,11 @@ function owe_most_amount(compdict) {
     }
     return myset;
 }
-const item = {"compA": 30, "compB": 56, "compC": 12, "compD": 33, "compE": 56};
-console.log(owe_most_amount(item))
+// Give a string s, return true if its palindrome.
+const ispalindrome = word => {
+    if(typeof word != "string") {
+        throw new TypeError("must be string")
+    }
+    return word == word.split("").reverse().join("")
+}
+console.log(ispalindrome("a"))

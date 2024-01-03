@@ -1,7 +1,7 @@
-from strings_hash import owe_most_amount
+from strings_hash import ispalindrome
 
 def main():
-    print(owe_most_amount({"compA": 30, "compB": 56, "compC": 12, "compD": 33, "compE": 56}))
+    print(ispalindrome("aba"))
     return
 if __name__ == "__main__":
     main()

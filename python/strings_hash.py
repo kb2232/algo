@@ -42,3 +42,10 @@ def owe_most_amount(compdict):
         maxval = max(compdict.values())
         return [key for key,val in compdict.items() if val == maxval]
     return None
+# Give a string s, return true if its palindrome.
+def ispalindrome(word):
+    if not isinstance(word, str):
+        raise TypeError("Must be string")
+    return word == word[::-1] #object[start:stop:step]
+
+

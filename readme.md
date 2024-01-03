@@ -30,3 +30,10 @@ EXAMPLE:
     INPUT: {"compA": 30, "compB": 56, "compC": 12, "compD": 33, "compE": 56}
     OUTPUT: ["compB", "compE"]
 ```
+## question 5
+```
+Give a string s, return true if its palindrome.
+A palindrome is a string that reads same forward and backwards
+- ispalindrome(word)
+EXAMPLE: "hanah" => true
+```
