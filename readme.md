@@ -18,7 +18,15 @@ given a string s, find the first non repeating character
 ```
 given a string, s, find the character c or characters, that repeats the most
 - repeatsmost(word)
-1. create a freq map of word
-2. from all the values, find max
-3. loop over word, return a list of one or all the characters with value of max
+EXAMPLE: 
+    INPUT: s = "aabbbccc"
+    OUTPUT: ['b', 'c']
+```
+## question 4
+```
+Given a dictionay of companies and how much each owe, return the company/companies that owes the most
+- owe_most_amount(compdict)
+EXAMPLE: 
+    INPUT: {"compA": 30, "compB": 56, "compC": 12, "compD": 33, "compE": 56}
+    OUTPUT: ["compB", "compE"]
 ```

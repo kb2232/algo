@@ -31,3 +31,14 @@ def repeatsmost(word):
     allvalues = freq.values()
     maxval = max(allvalues)
     return [char for char,val in freq.items() if val == maxval]
+"""
+Given a dictionay of companies and how much each owe, return the company/companies that owes the most.
+1. get all the values and find the max
+2. loop through each item
+    - if the value equals the max then store the key
+"""
+def owe_most_amount(compdict):
+    if isinstance(compdict, dict):
+        maxval = max(compdict.values())
+        return [key for key,val in compdict.items() if val == maxval]
+    return None

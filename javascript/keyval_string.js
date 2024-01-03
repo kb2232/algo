@@ -1,7 +1,4 @@
 
-/**
- * given a string s, return how many times a character c appears, -1 if it does not appear
- */
 const freqmap = word => {
     const obj = {};
     for(let c of word) {
@@ -9,6 +6,9 @@ const freqmap = word => {
     }
     return obj;
 }
+/**
+ * given a string s, return how many times a character c appears, -1 if it does not appear
+ */
 function charcount(word, character) {
     if (typeof word != "string") {
         throw new TypeError("must be a string")
@@ -51,4 +51,24 @@ const repeatsmost = word => {
     }
     return myset;
 }
-console.log(repeatsmost("babatunde"))
+/**
+ *  Given a dictionary of companies and how much each owe, return the company/companies that owes the most.
+1. get all the values and find the max
+2. loop through each item
+    - if the value equals the max then store the key
+ */
+function owe_most_amount(compdict) {
+    if(typeof compdict != "object") throw new TypeError("Must be Object!!");
+    const maxval = Math.max(...Object.values(compdict));
+    const myset = new Set();
+    for(const item in compdict){
+        const key = item;
+        const value = compdict[item];
+        if(value == maxval) {
+           myset.add(key)
+        }
+    }
+    return myset;
+}
+const item = {"compA": 30, "compB": 56, "compC": 12, "compD": 33, "compE": 56};
+console.log(owe_most_amount(item))
