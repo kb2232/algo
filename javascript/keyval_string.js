@@ -77,4 +77,28 @@ const ispalindrome = word => {
     }
     return word == word.split("").reverse().join("")
 }
-console.log(ispalindrome("a"))
+/**
+ * Given a string s, return true if its Pangram.
+A pangram is a sentence or string that contains every letter of the alphabet at least once. 
+- make list of 26 and fill with false
+- make lower case
+- loop through and see if every character is /^[a-z]&/.test()
+    - get index value of it and turn it to true
+- return false if any of the array values are false
+ */
+function ispanagram(word) {
+    if(typeof word == "string") {
+        const alphacheck = Array(26).fill(false);
+        word = word.toLowerCase();
+        for(let w of word) {
+            if(/^[a-z]$/.test(w)) {
+                const index = w.charCodeAt(0) - 'a'.charCodeAt(0);
+                alphacheck[index] = true;
+            }
+        }
+        return alphacheck.every(e=>e);
+    }else {
+        throw new TypeError("must be string")
+    }
+}
+console.log(ispanagram("abcdefghijklmnopqrstuvw xyz"))

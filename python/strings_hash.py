@@ -47,5 +47,23 @@ def ispalindrome(word):
     if not isinstance(word, str):
         raise TypeError("Must be string")
     return word == word[::-1] #object[start:stop:step]
-
-
+"""
+Given a string s, return true if its Pangram.
+A pangram is a sentence or string that contains every letter of the alphabet at least once. 
+- make list of 26 and fill with false
+- make lower case
+- loop through and see if every character is /^[a-z]&/.test()
+    - get index value of it and turn it to true
+- return false if any of the array values are false
+"""
+def panagram(word):
+    if isinstance(word, str):
+        assesspanagram = [False]*26
+        word = word.lower()
+        for w in word:
+            if w.isalpha():
+                index = ord(w) - ord('a')
+                assesspanagram[index] = True
+        return all(assesspanagram)
+    else:
+        raise TypeError("Must be string!!!")
