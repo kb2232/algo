@@ -41,7 +41,7 @@ A pangram is a sentence or string that contains every letter of the alphabet at 
 - panagram(word)
 - Example: "The quick brown fox jumps over a lazy dog" => true
 ### question 7
-Given a string, determine if its a anagram.
+Given two string inputs, determine if both are anagrams.
 An anagram is a word or phrase formed by rearranging the letters of a different word or phrase 
 - INPUT:  "listen" and "silent" => OUTPUT: true
 ### question 8
