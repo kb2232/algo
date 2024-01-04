@@ -1,7 +1,7 @@
-from strings_hash import panagram
+from strings_hash import isanagram
 
 def main():
-    print(panagram("The quick brown fox jumps over a lazy dog"))
+    print(isanagram("listen", "silent"))
     return
 if __name__ == "__main__":
     main()

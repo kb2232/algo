@@ -38,7 +38,11 @@ A pangram is a sentence or string that contains every letter of the alphabet at 
 ### question 7
 Given two string inputs, determine if both are anagrams.
 An anagram is a word or phrase formed by rearranging the letters of a different word or phrase 
+- isanagram(s1, s2)
 - INPUT:  "listen" and "silent" => OUTPUT: true
+- "listen" and "silent" are anagrams.
+- "triangle" and "integral" are anagrams.
+- "hello" and "bye" are not anagrams.
 ### question 8
 You need to write a function, "removeWhitespace", 
 that will remove the leading and trailing white spaces from a given string. 

@@ -67,3 +67,23 @@ def panagram(word):
         return all(assesspanagram)
     else:
         raise TypeError("Must be string!!!")
+"""
+Given two string inputs, determine if both are anagrams.
+An anagram is a word or phrase formed by rearranging the letters of a different word or phrase 
+- return false if there of diff lengths
+- create a frequency map of each
+- loop through s1, and check if each key and value equals in s2
+    - return false if you encounter one that does not match
+- return true
+"""   
+def isanagram(s1, s2):
+    if len(s1) != len(s2):
+        return False
+    freqs1 = Counter(s1)
+    freqs2 = Counter(s2)
+    for key,val in freqs1.items():
+        if freqs2.get(key) != val:
+            return False
+    return True
+
+

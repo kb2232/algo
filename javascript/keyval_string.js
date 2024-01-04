@@ -101,4 +101,23 @@ function ispanagram(word) {
         throw new TypeError("must be string")
     }
 }
-console.log(ispanagram("abcdefghijklmnopqrstuvw xyz"))
+/**
+ * Given two string inputs, determine if both are anagrams.
+ * An anagram is a word or phrase formed by rearranging the letters of a different word or phrase 
+- return false if there of diff lengths
+- create a frequency map of each
+- loop through s1, and check if each key and value equals in s2
+    - return false if you encounter one that does not match
+- return true
+ */
+const isanagram = (s1, s2) => {
+    if(s1.length != s2.length) return false;
+    const s1map = freqmap(s1);
+    const s2map = freqmap(s2);
+    for(const item in s1map) {
+        if(s2map[item] != s1map[item]) {
+            return false;
+        }
+    }
+    return true;
+}
