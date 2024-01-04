@@ -121,3 +121,31 @@ const isanagram = (s1, s2) => {
     }
     return true;
 }
+
+/**
+ * You need to write a function, "removeOutsideWhitespaces", 
+ * that will remove the leading and trailing white spaces from a given string. 
+ * The function will leave the white spaces that are in the middle of the string untouched. 
+ * If the input string consists only of white spaces, the function should return an empty string.
+- removeOutsideWhitespaces(word)
+
+MY APPROACH
+- find indexof first non whitespace character
+- find indexof last non whitespace character
+- make a new string from those indices
+ */
+const firstnonwhitespace_char_index = word => {
+    for(let i = 0; i<word.length; i++) 
+        if(!/^\s$/.test(word[i])) return i;
+    return -1;
+}
+const lastnonwhitespace_char_index = word => {
+    for(let i = word.length-1; i >= 0; i--) 
+        if(!/^\s$/.test(word[i])) return i;
+    return -1;
+}
+function removeOutsideWhitespaces(word) {
+    const start = firstnonwhitespace_char_index(word);
+    const stop = lastnonwhitespace_char_index(word);
+    return start ===-1 || stop === -1 ? '' : word.slice(start, stop+1);
+}

@@ -1,5 +1,5 @@
 # algorithm practice in javascript and python
-## strings and hash
+## strings and hash (solutions are in javascript and python directories)
 ### question 1
 given a string s, return how many times a character c appears, -1 if it does not appear
 - charcount(word, character)
@@ -44,10 +44,12 @@ An anagram is a word or phrase formed by rearranging the letters of a different 
 - "triangle" and "integral" are anagrams.
 - "hello" and "bye" are not anagrams.
 ### question 8
-You need to write a function, "removeWhitespace", 
+You need to write a function, "removeOutsideWhitespaces", 
 that will remove the leading and trailing white spaces from a given string. 
 The function will leave the white spaces that are in the middle of the string untouched. 
 If the input string consists only of white spaces, the function should return an empty string.
+- removeOutsideWhitespaces(word)
+
 ### question 9
 Given a string, s, sort it in increasing order
 ### question 10

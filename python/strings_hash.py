@@ -85,5 +85,31 @@ def isanagram(s1, s2):
         if freqs2.get(key) != val:
             return False
     return True
+"""
+You need to write a function, "removeOutsideWhitespaces", 
+that will remove the leading and trailing white spaces from a given string. 
+The function will leave the white spaces that are in the middle of the string untouched. 
+If the input string consists only of white spaces, the function should return an empty string.
+- removeOutsideWhitespaces(word)
 
+MY APPROACH
+- find indexof first non whitespace character
+- find indexof last non whitespace character
+- make a new string from those indices
+"""
+def firstnonwhitespace_char_index(word):
+    for i in range(0, len(word), 1):
+        if not word[i].isspace():
+            return i
+    return -1
+def lastnonwhitespace_char_index(word):
+    for i in range(len(word)-1, -1, -1):
+        if not word[i].isspace():
+            return i
+    return -1
 
+def removeOutsideWhitespaces(word):
+    start = firstnonwhitespace_char_index(word)
+    stop = lastnonwhitespace_char_index(word)
+    return '' if start == -1 or stop == -1 else word[start:stop+1]
+    

@@ -1,7 +1,7 @@
-from strings_hash import isanagram
+from strings_hash import removeOutsideWhitespaces
 
 def main():
-    print(isanagram("listen", "silent"))
+    print(removeOutsideWhitespaces(" - ku nle "))
     return
 if __name__ == "__main__":
     main()
