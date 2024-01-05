@@ -49,11 +49,15 @@ that will remove the leading and trailing white spaces from a given string.
 The function will leave the white spaces that are in the middle of the string untouched. 
 If the input string consists only of white spaces, the function should return an empty string.
 - removeOutsideWhitespaces(word)
-
 ### question 9
-Given a string, s, sort it in increasing order
+Given a string, s, sort it in increasing order using selection sort.
+Selection sort involved finding the smallest and moving it all the way to the begining.
+- selectionsort(word)
+- example "kunle" -> eunlk enulk elunk ekunl elnuk elkun  => "elknu"
 ### question 10
-Given a list of dictionary, sort them by a given key
-
+Given a list of dictionary, sort them by a given key using selection sort
+- selectionsort_list(list)
+- example: [{"name":"baba"}, {"name":"blake"},{"name":"aaple"}, {"name":"candy"}]
+    - [{"name":"aaple"}, {"name":"baba"},{"name":"blake"}, {"name":"candy"}]
 
 

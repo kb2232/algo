@@ -1,7 +1,7 @@
-from strings_hash import removeOutsideWhitespaces
+from strings_hash import bubblesort
 
 def main():
-    print(removeOutsideWhitespaces(" - ku nle "))
+    print(bubblesort("babatunde"))
     return
 if __name__ == "__main__":
     main()

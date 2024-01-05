@@ -113,3 +113,28 @@ def removeOutsideWhitespaces(word):
     stop = lastnonwhitespace_char_index(word)
     return '' if start == -1 or stop == -1 else word[start:stop+1]
     
+"""
+Given a string, s, sort it in increasing order using selection sort
+- selectionsort(word)
+- example "kunle" -> eunlk enulk elunk ekunl elnuk elkun  => "elknu"
+"""
+def selectionsort(word):
+    charlist = list(word)
+    for i in range(0, len(charlist)-1):
+        for j in range(i+1, len(charlist)):
+            if charlist[j] < charlist[i]:
+                charlist[j], charlist[i] = charlist[i], charlist[j]
+    return ''.join(charlist)
+"""
+Given a list of dictionary, sort them by a given key using selection sort
+- selectionsort_list(list)
+- example: [{"name":"baba"}, {"name":"blake"},{"name":"aaple"}, {"name":"candy"}]
+    - [{"name":"aaple"}, {"name":"baba"},{"name":"blake"}, {"name":"candy"}]
+"""
+# def selectionsort_list(itemlist):
+#     n = len(itemlist)
+#     for i in range(0, n-1):
+#         for j in range(i+1, n):
+
+
+

@@ -149,3 +149,25 @@ function removeOutsideWhitespaces(word) {
     const stop = lastnonwhitespace_char_index(word);
     return start ===-1 || stop === -1 ? '' : word.slice(start, stop+1);
 }
+/**
+ * Given a string, s, sort it in increasing order using selection sort
+- selectionsort(word)
+- example "kunle" -> eunlk enulk elunk ekunl elnuk elkun  => "elknu"
+ */
+function selectionsort(word) {
+    const listword = word.split("");
+    const n = listword.length;
+    for(let i=0; i<n; i++) {
+        for(let j=i+1; j<=n; j++) {
+            if(listword[j] < listword[i]) {
+                const temp = listword[i];
+                listword[i] = listword[j];
+                listword[j] = temp;
+            }
+        }
+    }
+    return listword.join("");
+}
+const s = "kunle";
+console.log({s: selectionsort(s)})
+
