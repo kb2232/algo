@@ -127,14 +127,47 @@ def selectionsort(word):
     return ''.join(charlist)
 """
 Given a list of dictionary, sort them by a given key using selection sort
-- selectionsort_list(list)
+- selectionsort_list(itemlist, key)
 - example: [{"name":"baba"}, {"name":"blake"},{"name":"aaple"}, {"name":"candy"}]
     - [{"name":"aaple"}, {"name":"baba"},{"name":"blake"}, {"name":"candy"}]
 """
-# def selectionsort_list(itemlist):
-#     n = len(itemlist)
-#     for i in range(0, n-1):
-#         for j in range(i+1, n):
+def selectionsort_list(itemlist, key):
+    n = len(itemlist)
+    for i in range(0, n-1):
+        for j in range(i+1, n):
+            if itemlist[j].get(key) < itemlist[i].get(key):
+                itemlist[j],itemlist[i] = itemlist[i],itemlist[j]
+    return itemlist
 
+"""
+Given string s, find the length of the longest substring without repeating characters
+ - int lengthOfLongestSubstring(word);
+Loop through each character,
+    - if its not in frequency map(freq), 
+    - freq[c] = i; then create key value with the value being the index of the character
+    - at that point, thats the longest: longest = max(longest, i+1-first)
+    - if it is in the map already, update the first = max(first, freq[c]+1)
+"""
+def lengthOfLongestSubstring(word):
+    freqmap = {}
+    first = 0
+    longest = 0
+    for i in range(0, len(word)-1):
+        c = word[i]
+        if c in freqmap:
+            first = max(first, freqmap.get(c)+1)
+        freqmap[c] = i
+        longest = max(longest, i-first+1)
+    return longest
+"""
+Given string s, find the longest substring without repeating characters
+ -  longestSubstring(word);
+ * EXAMPLE:
+    - input: "abcabcbb"; output: "abc" 
+    - input: "bbbbb"; output: "b" 
+    - input: "pwwkew"; output: "wke" 
+    - input: "tmmzuxt"; output: "mzuxt"
+    - input: ""; output: ""
+"""
 
 

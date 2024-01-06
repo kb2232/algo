@@ -1,7 +1,8 @@
-from strings_hash import bubblesort
+from strings_hash import lengthOfLongestSubstring
 
 def main():
-    print(bubblesort("babatunde"))
+    s = "tmmzuxt"
+    print(lengthOfLongestSubstring(s))
     return
 if __name__ == "__main__":
     main()

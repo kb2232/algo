@@ -168,6 +168,44 @@ function selectionsort(word) {
     }
     return listword.join("");
 }
-const s = "kunle";
-console.log({s: selectionsort(s)})
-
+/**
+ * Given a list of dictionary, sort them by a given key using selection sort
+- selectionsort_list(itemlist, key)
+- example: [{"name":"baba"}, {"name":"blake"},{"name":"aaple"}, {"name":"candy"}]
+    - [{"name":"aaple"}, {"name":"baba"},{"name":"blake"}, {"name":"candy"}]
+ */
+function selectionsort_list(itemlist, uni_key) {
+    const listword = itemlist;
+    const n = listword.length;
+    for(let i=0; i<n; i++) {
+        for(let j=i+1; j<=n; j++) {
+            if(listword[j][uni_key] < listword[i][uni_key]) {
+                const temp = listword[i];
+                listword[i] = listword[j];
+                listword[j] = temp;
+            }
+        }
+    }
+    return listword;
+}
+/**
+ * Given string s, find the length of the longest substring without repeating characters
+ - int lengthOfLongestSubstring(word);
+Loop through each character,
+    - if its not in frequency map(freq), 
+    - freq[c] = i; then create key value with the value being the index of the character
+    - at that point, thats the longest: longest = max(longest, i+1-first)
+    - if it is in the map already, update the first = max(first, freq[c]+1)
+*/
+const lengthOfLongestSubstring = word => {
+    const obj = {}; let first=0,longest=0;
+    for(let i=0; i<word.length; i++) {
+        const c = word[i];
+        if(obj[c]) {
+            first = Math.max(first, obj[c]+1);
+        }
+        obj[c] = i;
+        longest = Math.max(longest, i-first+1);
+    }
+    return longest;
+}

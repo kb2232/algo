@@ -56,8 +56,18 @@ Selection sort involved finding the smallest and moving it all the way to the be
 - example "kunle" -> eunlk enulk elunk ekunl elnuk elkun  => "elknu"
 ### question 10
 Given a list of dictionary, sort them by a given key using selection sort
-- selectionsort_list(list)
+- selectionsort_list(itemlist, key)
 - example: [{"name":"baba"}, {"name":"blake"},{"name":"aaple"}, {"name":"candy"}]
     - [{"name":"aaple"}, {"name":"baba"},{"name":"blake"}, {"name":"candy"}]
-
-
+### question 11
+Given string s, find the length of the longest substring without repeating characters
+ - lengthOfLongestSubstring(word);
+ - EXAMPLE:
+    - input: "abcabcbb"; output: 3; explanation: "abc" 
+    - input: "bbbbb"; output: 1; explanation: "b" 
+    - input: "pwwkew"; output: 3; explanation: "wke" 
+    - input: "tmmzuxt"; output: 5; explanation: "mzuxt"
+    - input: ""; output: 0; explanation: its empty 
+### question 12
+Following from question 12, Given string s, find the longest substring without repeating characters
+ -  longestSubstring(word);
