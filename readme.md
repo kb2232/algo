@@ -71,3 +71,15 @@ Given string s, find the length of the longest substring without repeating chara
 ### question 12
 Following from question 12, Given string s, find the longest substring without repeating characters
  -  longestSubstring(word);
+### question 13
+Shortest Distance Between Repeated Characters
+- shortestSubstring(word)
+- INPUT:
+    - A string s of length n (1 ≤ n ≤ 10^5), consisting of lowercase English letters.
+- OUTPUT:
+    - A substring of s which is derived from the shortest distance between two repeated characters.
+- Examples:
+    - shortestSubstring("blob") should return "blob". Explanation: The shortest distance is between the two 'b' characters which encompass the entire string.
+    - shortestSubstring("hannah") should return "nn". Explanation: The shortest distance is between the two 'n' characters in the middle.
+    - shortestSubstring("badabas") should return either "ada" or "aba". Explanation: Both "ada" and "aba" have the same shortest distance between two repeated characters.
+    - shortestSubstring("clique") should return "clique". Explanation: There are no repeated characters.

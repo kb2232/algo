@@ -1,4 +1,5 @@
 from collections import Counter
+import sys
 """
 given a string s, return how many times a character c appears, -1 if it does not appear
 """
@@ -160,14 +161,38 @@ def lengthOfLongestSubstring(word):
         longest = max(longest, i-first+1)
     return longest
 """
-Given string s, find the longest substring without repeating characters
+Following from question 12, Given string s, find the longest substring without repeating characters
  -  longestSubstring(word);
- * EXAMPLE:
-    - input: "abcabcbb"; output: "abc" 
-    - input: "bbbbb"; output: "b" 
-    - input: "pwwkew"; output: "wke" 
-    - input: "tmmzuxt"; output: "mzuxt"
-    - input: ""; output: ""
 """
+def longestSubstring(word): #this was looked up
+    freqmap = {}
+    start = 0 
+    maxLength = 0  # Track the length of the longest substring
+    longestStart = 0  # Start index of the longest substring found
+    for i, c in enumerate(word):  # Correct the range to include the last character
+        if c in freqmap and freqmap[c] >= start:
+            start = freqmap[c] + 1
+        freqmap[c] = i
+        if i - start + 1 > maxLength:  # Update maxLength and longestStart if a longer substring is found
+            maxLength = i - start + 1
+            longestStart = start
+    return word[longestStart:longestStart+maxLength]  # Return the longest substring
+# Shortest Distance Between Repeated Characters
+def shortestSubstring(word):
+    firstindex=-1
+    secindex=-1
+    shortdis=sys.maxsize
+    freq = {}
+    for i in range(len(word)-1):
+        c = word[i]
+        if c in freq:
+            if i-freq.get(c) < shortdis:
+                shortdis = i-freq.get(c)
+                firstindex = freq.get(c)
+                secindex = i
+        else:
+            freq[c] = i
+    return word[firstindex:secindex+1] if firstindex!=-1 or secindex!=-1 else word
+
 
 

@@ -209,3 +209,29 @@ const lengthOfLongestSubstring = word => {
     }
     return longest;
 }
+/*
+Following from question 12, Given string s, find the longest substring without repeating characters
+ -  longestSubstring(word);
+*/
+//this was looked up
+const longestSubstring = (str) => {
+    const map = {};
+    let start = 0; // Start of the sliding window
+    let longest = 0;
+    let longestStart = 0; // Starting index of the longest substring found
+
+    for (let i = 0; i < str.length; i++) {
+        const c = str[i];
+        if (map[c] >= start) { // Character seen and is within the current window
+            start = map[c] + 1; // Move the start of the window
+        }
+        map[c] = i; // Update the last index of the character
+
+        // If the current window is larger than the previously recorded longest
+        if (i - start + 1 > longest) {
+            longest = i - start + 1;
+            longestStart = start; // Update the start of the longest substring
+        }
+    }
+    return str.substring(longestStart, longestStart + longest); // Extract the longest substring
+};
