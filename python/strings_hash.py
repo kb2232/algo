@@ -160,6 +160,15 @@ def lengthOfLongestSubstring(word):
         freqmap[c] = i
         longest = max(longest, i-first+1)
     return longest
+def lengthOfLongestSubstring2(word):
+    freqmap = {}; first=0; longest=0;
+    for i in range(0, len(word)-1):
+        c = word[i]
+        if c in freqmap:
+            first = max(first,freqmap.get(c))
+        freqmap[c] = i
+        longest = max(longest, i - first)
+    return longest
 """
 Following from question 12, Given string s, find the longest substring without repeating characters
  -  longestSubstring(word);
@@ -177,6 +186,8 @@ def longestSubstring(word): #this was looked up
             maxLength = i - start + 1
             longestStart = start
     return word[longestStart:longestStart+maxLength]  # Return the longest substring
+
+
 # Shortest Distance Between Repeated Characters
 def shortestSubstring(word):
     firstindex=-1
@@ -193,6 +204,30 @@ def shortestSubstring(word):
         else:
             freq[c] = i
     return word[firstindex:secindex+1] if firstindex!=-1 or secindex!=-1 else word
+"""
+Given a blob, parse out then create a dictionary.
+- parsestring(blob)
+- Input: "Method=GET Path=/sample?param1=value1"
+- Output: {'Method': 'GET', 'Path': '/sample?param1=value1'}
+"""
+def parsestring(blob):
+    # split the blob by space
+    arrblob = blob.split(" ") #['Method=GET', 'Path=/sample?param1=value1']
+    # for each item in list, split by first and make a dictionary with each
+    arrdic = {}
+    for item in arrblob:
+        arritem = item.split("=", 1) #['Method', 'GET'], ['Path', '/sample?param1=value1']
+        arrdic[arritem[0]] = arritem[1]
+    return arrdic
 
-
-
+"""
+Given a blob of "http request", parse out: 
+    "Method, Path, Host, User-Agent, Accept, X-Service-Time, and X-Request-Id". 
+ - parsepair(blob)
+ - Create a key value data structure to group the entities parsed.
+ - All string input will have each key values in the same position. The value of the each key varies.
+ input: "Method=GET Path=/sample?param1=value1&param2=value2 HTTP/1.1 Host: www.example.com User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Accept: application/json X-Service-Time: 100ms X-Request-Id: abc123"
+"""
+def parsepair(blob):
+    blobarr = blob.split(" ")
+    return blobarr
